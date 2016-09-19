@@ -1,48 +1,78 @@
-</!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-
-<title>ROCK, PAPER, SCISSOR, SHOOT!!!</title>
-  <h1>Rock Paper Scissor SHOOT!!!</h1>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <title> Train Schedule</title>
 </head>
 <body>
+  <div class="container"> 
+  <div class="jumbotron">
+    <h1>Train Schedule</h1>
+    <h4>All aboard</h4>
+  </div>
+  <div class="panel panel-success">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Current Train Scedule</div>
+      <div class="panel-body">
+      <!-- Table -->
+      <table class="table">
+        <thead>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody class="eInfoDisplay"></tbody>
+       </table>
+    </div>
+    </div>
+<div class="panel panel-success">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Add Train</div>
 
-<input type = "text" class = "challengerOne"></input>
-<button class = "submit">submit</button>
-<!-- player one and two are displayed -->
-<div class = newNames>
-  <div id= "playerOneDisplay">Player 1</div>
-  <div class= "Result"> Results</div>
-  <div id= "playerTwoDisplay">Player 2</div>
-</div>
+        <div class="panel-body">
+            <form role="form">
 
+              <div class="form-group">
+                <label for="eName">Train Name</label>
+                <input type="text" class="form-control" id="eName">
+              </div>
+              <div class="form-group">
+                  <label for="endYear">Destination:</label>
+                 <input type="text" class="form-control" id="role">
+               </div>
+              <div class="form-group">
+                <label for="sDate">First Train Time</label>
+                <input type="date" class="form-control" id="sDate">
+              </div>
 
+              <div class="form-group">
+                <label for="rate">Frequency</label>
+                <input type="text" class="form-control" id="rate" >
+                
+              </div>
 
-<!-- message board -->
+              
 
-<textarea class="messages"></textarea>
+              <button type="submit" class="btn btn-success" id="employeeInfo">Submit</button>
+                <button type="button" class="btn btn-default">Clear</button>
 
+      
+                    </div>
+                    
+                  </form>
+                 </div>
+               </div>
+                        
+    
+  </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-
-  <script type="text/javascript" src="assets/js.js"></script>
-<script>
-  $("#submit").on("click",function(){
-    var name = $('#challengerOne').val().trim();
-console.log(name);
-
-$("#newNames").empty();
-$("#newNames").append(".playerOneDisplay" + name);
-  
-localStorage.clear();
-localStorage.setItem("name", name);
-return false;
-  });
-
-  $("#newNames").empty();
-  $("#newNames").append(".playerOneDisplay" + localStorage.getItem("name"));
-  
-</script>
-
+  <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 </html>
