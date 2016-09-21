@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css.css">
   <title> Train Schedule</title>
 </head>
 <body>
@@ -28,7 +28,9 @@
                     <th>Minutes Away</th>
                 </tr>
               </thead>
-              <tbody class="eInfoDisplay"></tbody>
+              <tbody class = "trainTable">
+                
+              </tbody>
        </table>
     </div>
     </div>
@@ -40,28 +42,25 @@
             <form role="form">
 
               <div class="form-group">
-                <label for="eName">Train Name</label>
-                <input type="text" class="form-control" id="eName">
+                <label for="tNameHtml">Train Name</label>
+                <input type="text" class="form-control" id="tNameHtml">
               </div>
               <div class="form-group">
-                  <label for="endYear">Destination:</label>
-                 <input type="text" class="form-control" id="role">
+                  <label for="destinationHtml">Destination:</label>
+                 <input type="text" class="form-control" id="destinationHtml">
                </div>
               <div class="form-group">
-                <label for="sDate">First Train Time</label>
-                <input type="date" class="form-control" id="sDate">
+                <label for="tTimeHtml">First Train Time (HH:MM - Military Time)</label>
+                <input type="time" class="form-control" id="tTimeHtml">
               </div>
 
               <div class="form-group">
-                <label for="rate">Frequency</label>
-                <input type="text" class="form-control" id="rate" >
+                <label for="frequencyHtml">Frequency (Minutes)</label>
+                <input type="number" class="form-control" id="frequencyHtml" >
                 
               </div>
 
-              
-
-              <button type="submit" class="btn btn-success" id="employeeInfo">Submit</button>
-                <button type="button" class="btn btn-default">Clear</button>
+              <button type="submit" class="btn btn-success" id="submitHtml">Submit</button>
 
       
                     </div>
@@ -73,6 +72,6 @@
     
   </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="assets/js.js"></script>
 </body>
 </html>
