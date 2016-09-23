@@ -8,9 +8,20 @@
   };
   firebase.initializeApp(config);
   var database = firebase.database();
-
 // User inputs 
 $(document).ready(function(){
+  
+database.ref().on("child_added", function(lastTrainAdded){
+
+  var infoGrabName = lastTrainAdded.val().name;
+  var infoGrabDestination = lastTrainAdded.val().destination;
+  var infoGrabTime = lastTrainAdded.val().trainTime;
+  var infoGrabFrequency= lastTrainAdded.val().frequency;
+
+//enters everything into the table
+  $(".trainTable > tbody").append("<tr><td>" + infoGrabName + "</td><td>" + infoGrabDestination + "</td><td>" + infoGrabFrequency + "</td></tr>");
+
+});
   
 $(document).on("click", "#submitHtml", function(){
   var trainNameJava = $('#tNameHtml').val().trim();
@@ -28,8 +39,7 @@ console.log(trainNameJava, trainDestinationJava, tTimeJava, frequencyJava);
     frequency: frequencyJava
   }
 
-  //enters everything into the table
-  $(".trainTable").append("<tr><td>" + trainNameJava + "</td><td>" + trainDestinationJava + "</td><td>" + frequencyJava + "</td></tr>");
+  
 
   database.ref().push(newTrainInfoJava);
 
